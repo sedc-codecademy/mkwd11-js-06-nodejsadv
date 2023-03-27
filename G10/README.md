@@ -37,4 +37,4 @@ This repository will contain every piece of material about the subject. It will 
  
 ## Team
 - Trainer: Ivo Kostovski - ivo.kostovski@gmail.com
-- Assitent: Todor Pelivanov - mail@domain.com
+- Assitant: Todor Pelivanov - mail@domain.com
