@@ -35,3 +35,6 @@ This repository will contain every piece of material about the subject. It will 
 - [Node.js Design Patterns](https://www.amazon.com/dp/1839214112?tag=uuid10-20)
 
  
+## Team
+- Trainer: Ivo Kostovski - ivo.kostovski@gmail.com
+- Assitent: Todor Pelivanov - mail@domain.com
