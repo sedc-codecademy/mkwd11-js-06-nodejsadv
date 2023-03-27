@@ -1,21 +1,12 @@
 [
   {
-    "id": "0c525eb1-3d93-4566-8fdb-510110d0555a",
-    "name": "Init the project",
-    "description": "Using npm init command to init the project",
-    "creator": "John Doe",
-    "createdAt": "2023-03-27T16:32:06.236Z",
-    "updatedAt": null,
-    "isDone": false
-  },
-  {
     "id": "0d3381c0-1755-4a22-a791-5fce710c8074",
     "name": "Create the header",
     "description": "Use bootstrap to create the header",
     "creator": "John Doe",
     "createdAt": "2023-03-27T16:33:01.578Z",
-    "updatedAt": null,
-    "isDone": false
+    "updatedAt": "2023-03-27T17:46:37.897Z",
+    "isDone": true
   },
   {
     "id": "d39041ce-6c3f-4a9b-8522-bbd76c1e494b",
@@ -23,6 +14,15 @@
     "description": "Use jquery",
     "creator": "John Doe",
     "createdAt": "2023-03-27T16:36:30.827Z",
+    "updatedAt": null,
+    "isDone": false
+  },
+  {
+    "id": "4031d9bf-0d27-4a3e-a892-2a2ad76aa3f7",
+    "name": "Explore jquery",
+    "description": "Use jquery qweqweqweqweqweqweqweqweqweqweqweqweqwewqeqw",
+    "creator": "Wee",
+    "createdAt": "2023-03-27T18:38:46.478Z",
     "updatedAt": null,
     "isDone": false
   }
