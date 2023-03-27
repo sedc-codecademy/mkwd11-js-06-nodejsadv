@@ -1,0 +1,22 @@
+[
+  {
+    "id": "3165192e-deb7-44d3-ab1c-41f4dc4a47e7",
+    "firstName": "Ratko",
+    "lastName": "Ratkovich",
+    "email": "ratkonajbolji@gmail.com",
+    "age": 50,
+    "landSize": 500000,
+    "numberOfTracktors": 30,
+    "hasAnimals": false
+  },
+  {
+    "id": "73f541d3-07af-4bd9-b34a-8c2ce13a2679",
+    "firstName": "Zlatko",
+    "lastName": "Zlatkovich",
+    "email": "zlatkoforever@gmail.com",
+    "age": 50,
+    "landSize": 500,
+    "numberOfTracktors": 0,
+    "hasAnimals": true
+  }
+]
