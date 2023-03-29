@@ -1,0 +1,36 @@
+### Get all products
+GET http://localhost:3000/products
+
+### Get product by id
+GET http://localhost:3000/products/6424666ee94093df07f46a89
+
+### Create a product
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+    "name": "boats",
+    "stock": 1,
+    "price": 999999,
+    "description": "if you want to have a yacht in your garage"
+}
+
+### Update a product using PUT
+PUT http://localhost:3000/products/64246702e94093df07f46a8c
+Content-Type: application/json
+
+{
+    "name": "cars",
+    "stock": 150,
+    "price": 35000,
+    "description": "das auto"
+}
+
+### Update a product using patch
+
+PATCH  http://localhost:3000/products/64246702e94093df07f46a8c
+Content-Type: application/json
+
+{
+    "stock": 120
+}
