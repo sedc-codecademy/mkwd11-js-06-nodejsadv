@@ -17,10 +17,20 @@ export default class ProductModel {
     }
 
     static async addProduct(product) {
-        console.log('inside model', product)
         const collection = await getDb().collection('products');
-        const createdProduct = await collection.insertOne(product);
-        console.log('created product', createdProduct);
-        return createdProduct;
+        const createdProductInfo = await collection.insertOne(product);
+        return { id: createdProductInfo.insertedId, ...product };
+    }
+
+    static async updateProduct(productId, body) {
+        const collection = await getDb().collection('products');
+        const result = await collection.updateOne({ _id: new ObjectId(productId) }, { $set: body })
+        return result;
+    }
+
+    static async deleteProduct(productId) {
+        const collection = await getDb().collection('products');
+        const deleteResponse = await collection.deleteOne({ _id: new ObjectId(productId) });
+        console.log(deleteResponse)
     }
 }
