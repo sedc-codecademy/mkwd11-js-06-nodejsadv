@@ -18,4 +18,22 @@ export default class ProductController {
             res.status(500).send({message: "Something wen't wrong"})
         }
     }
+
+    static async makePurchase(req, res) {
+        try {
+            const createdPurchase = await ProductModel.makePurchase(req.body)
+            res.status(201).send(createdPurchase);
+        } catch (error) {
+            res.status(500).send({ message: 'Error while making purchase' })
+        }
+    }
+
+    static async updatePurchase(req, res) {
+        try {
+            const updatedPurchase = await ProductModel.updatePurchase(req.params.id, req.body)
+            res.status(200).send(updatedPurchase)
+        } catch (error) {
+            res.status(500).send({ message: "Error while updating purchase" })
+        }
+    }
 }
