@@ -9,7 +9,7 @@ Product
 ```
 {
     title: string;
-    stock: number ( can't be bigger than 0)
+    stock: number ( can't be smaller than 0)
     description: string
     category: string( come up with your own )
     price: number
