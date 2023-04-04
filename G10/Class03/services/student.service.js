@@ -30,8 +30,6 @@ export default class StudentService {
 
         const keys = Object.keys(updateData);
 
-        console.log(keys)
-
         keys.forEach(key => {
             if (key !== '_id' && key !== '__v') {
                 student[key] = updateData[key]
