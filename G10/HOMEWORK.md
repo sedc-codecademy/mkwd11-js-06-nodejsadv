@@ -30,13 +30,14 @@ Each Zookeeper should have the following details (this is an example):
 - location - city and country where the zoo s/he is working at is located  - string;
 - isActive: if the employee is actively working or not - boolean
 
+### Task 2
+
 Create an API that will enable:
 - Adding a new animal
 - Editing existing animal
 - Getting all animals
 - Deleting an animal
 
-### Task 2
 ```
 {
   "_id": "876i5g3267g5b238d",
@@ -66,6 +67,32 @@ Create an API that will enable:
   - isDangerous - self-explanatory, an answer to the question "will I die trying to fight it?" - boolean
   - weight - how much the animal weights - number
   - enclosure - in which type of enclosure within the zoo the animal is living in (ex. mountain, ice, water, etc.) - "mountain"
+
+### Task 3
+
+Add mongoose to the project. Change the project structure so that you will have both services for bussiness logic and models for Mongo DB.
+
+Add the following validations:
+
+Each property type has to be set as previosly mentioned in task 1 & 2 (ex. name: string, age: number, etc.)
+
+1. Zookeeper
+- name - is required, can't be less than 5 carachters
+- age - is required, has to be between 18 - 110 years, including these two numbers
+- location - is required
+- isActive - is not required, has default value of false
+
+2. Animal
+- name - is required, can't be less than 2 carachters
+- age - is required, negative numbers are not allowed
+- location - is required
+- gender - is required, has to be either 'M' or 'F'
+- characteristics - is required
+  - food - not required
+  - colour - not required
+  - isDangerous - not required, default value is false
+  - weight - not required, negative numbers are not allowed
+  - enclosure - required
   
 ## Requirment description:
 - Use Mongo DB
