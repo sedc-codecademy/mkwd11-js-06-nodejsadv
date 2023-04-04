@@ -7,9 +7,12 @@ router.get('/', StudentController.getAllStudents)
 // Get student by id
 
 // Add a student
+router.post('/', StudentController.addNewStudent)
 
 // Update a student
+router.put('/:id', StudentController.updateStudent)
 
 // Delete a student
+router.delete('/:id', StudentController.deleteStudent)
 
 export default router;
