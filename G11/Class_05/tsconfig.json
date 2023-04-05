@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "ES6",
+    "noImplicitAny": false,
+    "outDir": "output",
+    "declaration": true,
+    "experimentalDecorators": true
+  },
+  "exclude": ["node_modules", "output"]
+}

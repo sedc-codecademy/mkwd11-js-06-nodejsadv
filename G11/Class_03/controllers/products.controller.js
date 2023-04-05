@@ -14,7 +14,11 @@ class ProductsController {
 
         return product
     }
+    async getByKeyword(keyword){
+        const product = await productModel.getByKeyword(keyword);
 
+        return product
+    }
     async addProduct(productData){
         await productModel.addProduct(productData);
     };

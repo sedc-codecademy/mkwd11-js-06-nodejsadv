@@ -7,13 +7,24 @@ const orderSchema = new Schema({
         type: String
     },
 
-    items: [
+    items:  [
         {
             type: Schema.Types.ObjectId,
             ref: "Product" // Will give us access to populate method
             // will reference to the Product document with the coresponding id
         }
-    ]
+    ],
+
+    reviews: {
+        type: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: "Product" // Will give us access to populate method
+                // will reference to the Product document with the coresponding id
+            }
+        ],
+        required: true
+    }
 });
 
 export default orderSchema;

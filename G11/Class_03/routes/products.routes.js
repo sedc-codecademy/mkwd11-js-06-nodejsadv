@@ -67,4 +67,12 @@ productRouter.delete('/:id', async(req, res) => {
     res.send(`Product with id: ${id} was deleted.`)
 });
 
+productRouter.post('/search', async ( req, res) => {
+    const {kw} = req.body;
+
+    const products = await productController.getByKeyword(kw
+        )
+
+       res.send(products)
+})
 export default productRouter;

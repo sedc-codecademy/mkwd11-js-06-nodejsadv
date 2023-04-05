@@ -29,6 +29,13 @@ class ProductModel {
         return product;
     }
    
+    async getByKeyword(keyword){
+        const products = await this.mongo_model.find({name: { $regex: keyword }});
+
+        //will return the product that has exactly same name as the keyword
+        console.log('here', products)
+        return products
+    }
     async addProduct(productData) {
         /**
          * productData => object literal
