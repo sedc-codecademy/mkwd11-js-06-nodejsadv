@@ -18,4 +18,34 @@ export default class CourseController {
             res.status(500).send(error)
         }
     }
+    
+    static async updateCourse(req, res) {
+        try {
+            const updatedCourse = await CourseService.updateCourse(req.params.id, req.body)
+            res.status(200).send(updatedCourse)
+        } catch (error) {
+            res.status(500).send(error)
+        }
+    }
+
+    static async deleteCourse(req, res) {
+        try {
+            await CourseService.deleteCourse(req.params.id)
+            res.sendStatus(200)
+        } catch (error) {
+            res.status(500).send(error)
+        }
+    }
+
+    static async updateStudents(req, res) {
+        try {
+            const courseId = req.params.id;
+            const studentIds = req.body.studentIds;
+
+            const response = await CourseService.updateStudents(courseId, studentIds)
+            res.status(200).send(response)
+        } catch (error) {
+            res.status(500).send(error.message)
+        }
+    }
 }

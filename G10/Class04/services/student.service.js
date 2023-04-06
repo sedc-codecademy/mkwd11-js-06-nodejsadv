@@ -1,10 +1,23 @@
 import Student from '../models/student.model.js'
+import Course from '../models/course.model.js'
 
 export default class StudentService {
     static async getAllStudents() {
         const students = await Student.find({})
 
         return students;
+    }
+
+    static async getStudentById(studentId) {
+        const student = await Student.findById(studentId).populate('course', '-students')
+        
+        // const course = await Course.findById(student.courseId).lean()
+        // const fullStudent = {
+        //     ...student,
+        //     course
+        // }
+
+        return student;
     }
 
     static async addNewStudent(studentData) {

@@ -18,7 +18,13 @@ const courseSchema = new Schema({
     assistant: {
         type: String,
         required: true
-    }
+    },
+    students: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Student'
+        }
+    ]
 })
 
 const Course = model('Course', courseSchema);

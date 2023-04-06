@@ -3,7 +3,7 @@ import StudentController from '../controllers/student.controller.js';
 const router = Router();
 
 // Get all students
-router.get('/', StudentController.getAllStudents)
+router.get('/:id?', StudentController.getAllStudents)
 // Get student by id
 
 // Add a student

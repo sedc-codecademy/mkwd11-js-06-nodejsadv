@@ -2,9 +2,15 @@ import StudentService from '../services/student.service.js';
 
 export default class StudentController {
     static async getAllStudents(req, res) {
+        const id = req.params.id;
         try {
-            const students = await StudentService.getAllStudents()
-            res.status(200).send(students)
+            if (id) {
+                const student = await StudentService.getStudentById(id)
+                res.status(200).send(student)
+            } else {
+                const students = await StudentService.getAllStudents()
+                res.status(200).send(students)
+            }
         } catch (error) {
             res.status(500).send('Error while fetching students')
         }
