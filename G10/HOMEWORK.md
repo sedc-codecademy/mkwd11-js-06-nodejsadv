@@ -144,6 +144,10 @@ MONGO_DB_NAME=zoo
 MONGO_SERVER=
 ```
 
+## Homeworks versions
+1. Version 1 - Task 1 & Task 2
+2. Version 2 - Task 3 & Task 4
+
 ## Before you send:
 - Use .env variables. Ignore your own values, but provide .env.example so that we can connect to our own database while checking the homework
 - Attach exported PostMan collection
