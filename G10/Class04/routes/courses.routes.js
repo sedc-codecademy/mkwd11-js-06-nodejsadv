@@ -4,7 +4,7 @@ import CourseController from '../controllers/course.controller.js';
 const router = Router();
 
 // Get all courses
-router.get('/', CourseController.getAllCourses)
+router.get('/:id?', CourseController.getAllCourses)
 
 // Get course by ID
 

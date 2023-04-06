@@ -3,8 +3,15 @@ import CourseService from '../services/course.service.js';
 export default class CourseController {
     static async getAllCourses(req, res) {
         try {
-            const courses = await CourseService.getAllCourses()
-            res.status(200).send(courses);
+            const id = req.params.id;
+
+            if (id) {
+                const course = await CourseService.getCourseById(id)
+                res.status(200).send(course)
+            } else {
+                const courses = await CourseService.getAllCourses()
+                res.status(200).send(courses);
+            }
         } catch (error) {
             res.status(500).send(error)
         }

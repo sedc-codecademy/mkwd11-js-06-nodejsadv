@@ -7,6 +7,11 @@ export default class CourseService {
         return courses;
     }
 
+    static async getCourseById(courseId) {
+        const course = await Course.findById(courseId).populate('students')
+        return course;
+    }
+
     static async addNewCourse(courseData) {
         const course = new Course(courseData);
 
