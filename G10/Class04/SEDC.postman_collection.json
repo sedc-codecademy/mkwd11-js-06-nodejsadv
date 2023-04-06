@@ -912,13 +912,33 @@
 					"response": []
 				},
 				{
+					"name": "Get all student by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/students",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Add new student",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"firstName\": \"Ivo\",\n    \"lastName\": \"Kostovski\",\n    \"age\": 33,\n    \"email\": \"ivo.kostovski@gmail.com\"\n}",
+							"raw": "{\n    \"firstName\": \"Nov\",\n    \"lastName\": \"Student\",\n    \"age\": 20,\n    \"email\": \"nov.student1@gmail.com\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1001,13 +1021,53 @@
 					"response": []
 				},
 				{
+					"name": "Get all courses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/courses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get course by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/courses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Add new course",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\": \"HTML CSS\",\n    \"numberOfClassses\": 10,\n    \"trainer\": \"Dejan Jovanov\",\n    \"assistant\": \"Martin Panovski\"\n}",
+							"raw": "{\n    \"title\": \"HTML CSS\",\n    \"numberOfClasses\": 10,\n    \"trainer\": \"Dejan Jovanov\",\n    \"assistant\": \"Martin Panovski\",\n    \"courseStructure\": {\n        \"languages\": [\"HTML\", \"CSS\"],\n        \"framworks\": [\"Nest JS\"],\n        \"tools\": [\"VS Code\"]\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1030,12 +1090,21 @@
 					"response": []
 				},
 				{
-					"name": "Get all courses",
+					"name": "Delete course",
 					"request": {
-						"method": "GET",
+						"method": "DELETE",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "http://localhost:3000/api/courses",
+							"raw": "http://localhost:3000/api/courses/642c6ec23c49d7d956a67f70",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1043,7 +1112,69 @@
 							"port": "3000",
 							"path": [
 								"api",
-								"courses"
+								"courses",
+								"642c6ec23c49d7d956a67f70"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update course",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Ivo\",\n    \"lastName\": \"Kostovski\",\n    \"age\": 33,\n    \"email\": \"ivo.kostovski3@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/students/642c5ad400a6056c413f6f41",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"students",
+								"642c5ad400a6056c413f6f41"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Enroll students to course",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"studentIds\": [\n        \"642f00d0fd52868bbe2efb6c\",\n        \"642f00e0fd52868bbe2efb6e\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/courses/642f00a1fd52868bbe2efb68/students",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"courses",
+								"642f00a1fd52868bbe2efb68",
+								"students"
 							]
 						}
 					},
