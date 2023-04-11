@@ -24,6 +24,18 @@ structure, properties, add any validation as you see fit.
 
 In order to build this use Node.js (with Express) & MongoDB (with Mongoose).
 
+Models:
+
+1. Songs
+- album - song can be in one album
+- artist - song can be by one artist
+
+2. Artists
+- songs - artist can have many songs
+
+2. Albums
+- songs - album can have many songs
+
 After you are done:
 
 - Add code to your own repo on GitHub
