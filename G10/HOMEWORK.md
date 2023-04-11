@@ -68,6 +68,10 @@ Create an API that will enable:
   - weight - how much the animal weights - number
   - enclosure - in which type of enclosure within the zoo the animal is living in (ex. mountain, ice, water, etc.) - "mountain"
 
+#### Bonus requirements:
+- Validate that animals and zookeepers are in proper format and that all properties are added (each property is required)
+- Enable filtering all animals by zoo location (ex. if I call the endpoint to get all animals, I should be able to filter all animals from "Kumanovo" by adding `?location=Kumanovo`
+
 ### Task 3
 
 Add mongoose to the project. Change the project structure so that you will have both services for bussiness logic and models for Mongo DB.
@@ -93,6 +97,32 @@ Each property type has to be set as previosly mentioned in task 1 & 2 (ex. name:
   - isDangerous - not required, default value is false
   - weight - not required, negative numbers are not allowed
   - enclosure - required
+
+### Task 4
+
+Expand zooker and animal models with the following properties:
+
+1. Zookeeper:
+- animals - list of animals for which the zooker is responsible for
+
+2. Animal
+- zookeeper - responsible zookeeper asigned to this animal
+
+Add three additional endpoints (od edit previous one if possible, up to you):
+- Get zookeper by ID - Should provide all data about the zookeeper, plus list of animals with full data about the animals to which the zookeeper is assigned to
+- Get animal by ID - Should provide all data about the animal, plus info about the responsible zookeeper
+- Assign animals to zookeeper - I should be able to assign multiple animals to a single zookeeper
+
+#### Bonus requirments
+1. expand the get all animals endpoint with ability to:
+- get all animals from certain location
+- get all fe/male animals
+- get all animals older than X
+
+2. expand the get all zookeepers endpoint with ability to:
+- get all zookeepers from certain location
+- get all zookeepers older than X
+- get all in/active zookeepers
   
 ## Requirment description:
 - Use Mongo DB
@@ -114,9 +144,9 @@ MONGO_DB_NAME=zoo
 MONGO_SERVER=
 ```
 
-## Bonus requirements:
-- Validate that animals and zookeepers are in proper format and that all properties are added (each property is required)
-- Enable filtering all animals by zoo location (ex. if I call the endpoint to get all animals, I should be able to filter all animals from "Kumanovo" by adding `?location=Kumanovo`
+## Homeworks versions
+1. Version 1 - Task 1 & Task 2
+2. Version 2 - Task 3 & Task 4
 
 ## Before you send:
 - Use .env variables. Ignore your own values, but provide .env.example so that we can connect to our own database while checking the homework

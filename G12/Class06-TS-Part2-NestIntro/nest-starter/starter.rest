@@ -1,0 +1,24 @@
+GET http://localhost:3000
+
+###
+
+GET http://localhost:3000/data
+
+### 
+
+POST http://localhost:3000/data
+Content-Type: application/json
+
+{
+    "title": "car", 
+    "price": 10000,
+    "stock": 5
+}
+
+###
+
+PATCH http://localhost:3000/data/10900
+
+### 
+
+GET http://localhost:3000/products

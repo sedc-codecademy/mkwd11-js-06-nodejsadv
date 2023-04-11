@@ -38,8 +38,8 @@ const user: {
 };
 
 type User = {
-  firstName: string;
-  title: string;
+  firstName?: string;
+  title?: string;
   age: number;
 };
 
