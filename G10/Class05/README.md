@@ -8,8 +8,8 @@ interesting and joyful.
 The idea for this app is to create an app that will enable any client side app to get or add data about artists and
 their songs.
 
-- Search for artists
-- Search for songs
+- Search for artists by name
+- Search for songs by title
 - See all songs by artist
 - See all songs by genre
 - Add new song
