@@ -10,6 +10,8 @@ const todos: Todo[] = [
     {name: "Go to the shop", isDone: false}
 ]
 
+// The @Injectable() decorator tells the dependency injection mechanism
+// that this class is injectable, meaning it can be injected in controllers, other services etc.
 @Injectable()
 export class TodosService {
 
