@@ -1,0 +1,23 @@
+{
+  "name": "class-5---workshop",
+  "version": "1.0.0",
+  "description": "## Music app We all listen to music, one genre or another, we are completely surrounded by it, and it's makes our lives much more interesting and joyful.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^7.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
