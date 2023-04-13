@@ -1,11 +1,13 @@
 import {
   Body,
   Controller,
+  Delete,
   Get,
   HttpCode,
   Param,
   Patch,
   Post,
+  Query,
   Req,
   Res,
 } from '@nestjs/common';
@@ -19,11 +21,11 @@ export class ProductsController {
 
   //   If you add the @Res express response you have to return express syntax such as res.sendStatus or res.send otherwise the endpoint will stop working, only use the @Req or @Res if you need to do something that nest doesn't do by default
   @Get()
-  getAllProducts(@Req() req: Request) {
+  getAllProducts(@Req() req: Request, @Query('title') title: string) {
     console.log(req);
 
     // res.sendStatus(200);
-    return this.productsService.getAllProducts();
+    return this.productsService.getAllProducts(title);
   }
 
   @Get('/:id')
@@ -44,5 +46,15 @@ export class ProductsController {
     @Body() updateData: UpdateProductDto,
   ) {
     return this.productsService.updateProduct(productId, updateData);
+  }
+
+  @Delete('/:id')
+  deleteProduct(@Param() productId: string) {
+    return this.productsService.deleteProduct(productId);
+  }
+
+  @Delete()
+  deleteAllProducts() {
+    return this.productsService.deleteAllProducts();
   }
 }

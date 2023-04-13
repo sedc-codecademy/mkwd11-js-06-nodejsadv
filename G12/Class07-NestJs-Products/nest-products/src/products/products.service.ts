@@ -10,13 +10,19 @@ import { UpdateProductDto } from './dtos/update-product.dto';
 
 @Injectable()
 export class ProductsService {
-  async getAllProducts() {
+  async getAllProducts(title?: string) {
     const productsJson = await readFile(
       join(process.cwd(), 'src', 'products', 'data', 'products.json'),
       'utf-8',
     );
 
-    const products: Product[] = JSON.parse(productsJson);
+    let products: Product[] = JSON.parse(productsJson);
+
+    if (title) {
+      products = products.filter((product) =>
+        product.title.toLowerCase().includes(title.toLowerCase()),
+      );
+    }
 
     return products;
   }
@@ -54,6 +60,8 @@ export class ProductsService {
   }
 
   async updateProduct(productId: string, updateData: UpdateProductDto) {
+    console.log('From update product method', updateData);
+
     const products = await this.getAllProducts();
 
     const foundProduct = await this.getProductById(productId);
@@ -67,5 +75,21 @@ export class ProductsService {
     await this.saveProducts(updatedProducts);
 
     // return foundProduct;
+  }
+  async deleteProduct(productId: string) {
+    const products = await this.getAllProducts();
+
+    const updatedProducts = products.filter(
+      (product) => product.id !== productId,
+    );
+
+    if (products.length === updatedProducts.length)
+      throw new NotFoundException('Product not found');
+
+    await this.saveProducts(updatedProducts);
+  }
+
+  async deleteAllProducts() {
+    await this.saveProducts([]);
   }
 }

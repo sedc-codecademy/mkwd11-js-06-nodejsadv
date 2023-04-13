@@ -12,10 +12,13 @@
     "id": "541597cc-2925-4732-b863-f1ab34841017"
   },
   {
+    "21323": "Super blender 9000",
     "title": "Super blender 9000",
     "price": 300,
-    "stock": 120,
-    "id": "667123db-5c8d-4d20-a16e-46d8b9850bf0"
+    "stock": 12,
+    "id": "667123db-5c8d-4d20-a16e-46d8b9850bf0",
+    "academy": "test",
+    "isStudent": "blah blah"
   },
   {
     "title": "Blender",
@@ -28,5 +31,11 @@
     "price": 300,
     "stock": 120,
     "id": "312d0fc9-9845-42a9-805a-9d932eafe549"
+  },
+  {
+    "title": "Extremely silent blender",
+    "price": 300,
+    "stock": 120,
+    "id": "322ca565-5ce1-41d6-9358-a5b0209f541e"
   }
 ]
