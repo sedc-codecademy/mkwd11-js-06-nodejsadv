@@ -51,64 +51,33 @@ var numbersAgain = [1, 2, 3];
 var employees = [1, 'Ivo'];
 // Any - Use with caution!!!
 var randomStuff = [true, [], 'nekoj string', 1];
-// Interfaces
-// interface Animal {
-//     name: string;
-//     age: number
-// }
-// let animal: Animal = {
-//     name: 'Sparky',
-//     age: 23
-// }
-// let newAnimal = {
-//     name: 'Blacky',
-//     age: 10
-// } satisfies Animal;
-// Types
-// type Animal = {
-//     name: string;
-//     age: number;
-// }
-// type Nullish = undefined | null;
-// let nothing: Nullish = undefined;
-// Objects
-// interface Person {
-//     name: string;
-//     age: number;
-// }
-// let emptyObject = {} as Person;
-// let test = 'black' as any as Person;
-// interface Employee extends Person {
-//     job: string;
-// }
-// const newEmployee: Employee = {
-//     name: 'John',
-//     age: 20, 
-//     job: 'teacher'
-// }
-// Other types
-var anything = 'sdasda';
-var mistery;
-// void
-var func = function () {
-    console.log('nesto');
-};
-var func2 = function () {
-    throw new Error('Some error');
-};
-var sumOfTwo = function (number1, number2) {
-    return number1 + number2;
-};
-var sum = sumOfTwo(1, 2);
-// sumOfTwo('1', '2')
-console.log(sum);
-var sumOfItems = function (item1, item2) {
-    // console.log(typeof item1)
-    // console.log(typeof item2)
-    // return item1 + item2
-    if (typeof item1 === 'number' && typeof item2 === 'number') {
-        return item1 + item2;
+function flatten(array, result) {
+    if (result === void 0) { result = []; }
+    for (var i = 0; i < array.length; i++) {
+        if (Array.isArray(array[i])) {
+            flatten(array[i], result);
+        }
+        else {
+            result.push(array[i]);
+        }
     }
-    return "".concat(item1).concat(item2);
-};
-console.log(sumOfItems(1, '2'));
+    return result;
+}
+var list = [1, 2, [2, 3, [4, 5, [6, 7], [5], 12], [4, 5], 5]];
+console.log(flatten(list));
+// Class
+var Calculator = /** @class */ (function () {
+    function Calculator(value) {
+        if (value === void 0) { value = 0; }
+        this.value = value;
+        // Private property in JS
+        // #name = 'Ivo'
+        // Private property in TS
+        this.name = 'Ivo';
+        this.name;
+    }
+    return Calculator;
+}());
+var newCalc = new Calculator(1);
+console.log(newCalc);
+// newCalc.name

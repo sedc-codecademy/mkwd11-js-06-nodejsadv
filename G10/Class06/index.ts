@@ -71,7 +71,8 @@ let randomStuff: any[] = [true, [], 'nekoj string', 1 ]
 
 // interface Animal {
 //     name: string;
-//     age: number
+//     age: number;
+//     children?: string[]
 // }
 
 // let animal: Animal = {
@@ -118,40 +119,105 @@ let randomStuff: any[] = [true, [], 'nekoj string', 1 ]
 
 // Other types
 
-let anything: any = 'sdasda';
+// let anything: any = 'sdasda';
 
-let mistery: unknown;
+// let mistery: unknown;
 
-// void
+// // void
 
-const func = (): void => {
-    console.log('nesto')
+// const func = (): void => {
+//     console.log('nesto')
+// }
+
+// const func2 = (): never => {
+//     throw new Error('Some error')
+// }
+
+// const sumOfTwo = (number1: number, number2: number): number => {
+//     return number1 + number2
+// }
+
+// const sum = sumOfTwo(1, 2)
+
+// // sumOfTwo('1', '2')
+
+// console.log(sum)
+
+// const sumOfItems = (item1: number | string, item2: number | string): any => {
+//     // console.log(typeof item1)
+//     // console.log(typeof item2)
+//     // return item1 + item2
+
+//     if (typeof item1 === 'number' && typeof item2 === 'number') {
+//         return item1 + item2
+//     }
+
+//     return `${item1}${item2}`
+// }
+
+// console.log(sumOfItems(1, '2'))
+
+// Map & Set
+
+// const someMap: { [key: string]: string } = {
+//     'hjdasgduyasgijdgah': 'Mockingbird',
+    
+// }
+
+// someMap['hjdasgduyasgijdgah']
+
+// Generics
+
+interface MultiDimensionArray<T> {
+    [key: string]: T | MultiDimensionArray<T>
 }
 
-const func2 = (): never => {
-    throw new Error('Some error')
-}
-
-const sumOfTwo = (number1: number, number2: number): number => {
-    return number1 + number2
-}
-
-const sum = sumOfTwo(1, 2)
-
-// sumOfTwo('1', '2')
-
-console.log(sum)
-
-const sumOfItems = (item1: number | string, item2: number | string): any => {
-    // console.log(typeof item1)
-    // console.log(typeof item2)
-    // return item1 + item2
-
-    if (typeof item1 === 'number' && typeof item2 === 'number') {
-        return item1 + item2
+function flatten<T>(array: MultiDimensionArray<T>, result: T[] = []): T[] {
+    for (let i = 0; i < (array as any).length; i++) {
+        if (Array.isArray(array[i])) {
+            flatten(array[i] as MultiDimensionArray<T>, result)
+        } else {
+            result.push(array[i] as T)
+        }
     }
 
-    return `${item1}${item2}`
+    return result;
 }
 
-console.log(sumOfItems(1, '2'))
+const list = [1, 2, [2, 3, [4, 5, [6, 7], [5], 12], [4, 5], 5]]
+
+console.log(flatten(list as any))
+
+
+// Class
+
+class Calculator {
+
+    // Private property in JS
+    // #name = 'Ivo'
+
+    // Private property in TS
+    private name = 'Ivo';
+
+    public age = 33;
+
+    readonly job = 'instructor';
+
+    constructor(protected value: number = 0) {
+        this.name;
+    }
+}
+
+const newCalc = new Calculator(1)
+
+newCalc.age
+
+console.log(newCalc)
+
+// newCalc.name
+
+interface User {
+    name: string;
+
+    getFullName: () => string
+}
