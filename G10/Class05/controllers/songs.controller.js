@@ -3,6 +3,14 @@ import SongsService from "../services/songs.service.js";
 export default class SongsController {
   static async searchSongsByTitle(req, res) {
     try {
+
+      // /songs?songTitle=mockingbird
+      // /songs?songTitle=mockingbird&genre=rap
+      // const query = {
+      //   genre: req.query.genre,
+      //   title: req.query.songTitle
+      // }
+
       const songTitle = req.query.songTitle;
       const songs = await SongsService.searchSongsByTitle(songTitle);
       res.status(200).send(songs);
