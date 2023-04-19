@@ -113,6 +113,10 @@ Add three additional endpoints (od edit previous one if possible, up to you):
 - Get animal by ID - Should provide all data about the animal, plus info about the responsible zookeeper
 - Assign animals to zookeeper - I should be able to assign multiple animals to a single zookeeper
 
+### Task 5
+
+Implement all previously listed requirments with Nest JS. The app should use mongoose (so we are rebuilding the version two of the app, mentioned in tasks 3 and 4).
+
 #### Bonus requirments
 1. expand the get all animals endpoint with ability to:
 - get all animals from certain location
@@ -147,6 +151,7 @@ MONGO_SERVER=
 ## Homeworks versions
 1. Version 1 - Task 1 & Task 2
 2. Version 2 - Task 3 & Task 4
+3. Version 3 - Task 5
 
 ## Before you send:
 - Use .env variables. Ignore your own values, but provide .env.example so that we can connect to our own database while checking the homework
