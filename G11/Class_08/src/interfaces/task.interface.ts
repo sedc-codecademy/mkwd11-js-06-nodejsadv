@@ -16,7 +16,7 @@ export interface Task {
   id: string;
   name: string;
   description: string;
-  dueData: number; // timestamp
+  dueDate: number; // timestamp
   priority: Priority;
   status: Status;
 }
