@@ -3,6 +3,8 @@ import ArtistsService from "../services/artists.service.js";
 export default class ArtistController {
   static async searchArtists(req, res) {
     try {
+      // /artists?artistName=50 cent
+      // /artists/:artistName === /artists/50 cent
       const artistName = req.query.artistName;
       const artists = await ArtistsService.searchArtists(artistName);
       res.status(200).send(artists);

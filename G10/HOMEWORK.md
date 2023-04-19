@@ -62,7 +62,7 @@ Create an API that will enable:
 - location - city and country where the animal is located at - string;
 - gender - gender of the animal - string;
 - characteristics - all characteristics about this animal - object
-  - food - types of food the animal is fed - array of strings 
+  - food - types of food the animal is fed - array of strings
   - colour - animals colour - string
   - isDangerous - self-explanatory, an answer to the question "will I die trying to fight it?" - boolean
   - weight - how much the animal weights - number
@@ -74,11 +74,11 @@ Create an API that will enable:
 
 ### Task 3
 
-Add mongoose to the project. Change the project structure so that you will have both services for bussiness logic and models for Mongo DB.
+Add mongoose to the project. Change the project structure so that you will have both services for business logic and models for Mongo DB.
 
 Add the following validations:
 
-Each property type has to be set as previosly mentioned in task 1 & 2 (ex. name: string, age: number, etc.)
+Each property type has to be set as previously mentioned in task 1 & 2 (ex. name: string, age: number, etc.)
 
 1. Zookeeper
 - name - is required, can't be less than 5 carachters
@@ -100,20 +100,24 @@ Each property type has to be set as previosly mentioned in task 1 & 2 (ex. name:
 
 ### Task 4
 
-Expand zooker and animal models with the following properties:
+Expand zookeeper and animal models with the following properties:
 
 1. Zookeeper:
 - animals - list of animals for which the zooker is responsible for
 
 2. Animal
-- zookeeper - responsible zookeeper asigned to this animal
+- zookeeper - responsible zookeeper assigned to this animal
 
 Add three additional endpoints (od edit previous one if possible, up to you):
 - Get zookeper by ID - Should provide all data about the zookeeper, plus list of animals with full data about the animals to which the zookeeper is assigned to
 - Get animal by ID - Should provide all data about the animal, plus info about the responsible zookeeper
 - Assign animals to zookeeper - I should be able to assign multiple animals to a single zookeeper
 
-#### Bonus requirments
+### Task 5
+
+Implement all previously listed requirements with Nest JS. The app should use mongoose (so we are rebuilding the version two of the app, mentioned in tasks 3 and 4).
+
+#### Bonus requirements
 1. expand the get all animals endpoint with ability to:
 - get all animals from certain location
 - get all fe/male animals
@@ -147,6 +151,7 @@ MONGO_SERVER=
 ## Homeworks versions
 1. Version 1 - Task 1 & Task 2
 2. Version 2 - Task 3 & Task 4
+3. Version 3 - Task 5
 
 ## Before you send:
 - Use .env variables. Ignore your own values, but provide .env.example so that we can connect to our own database while checking the homework
