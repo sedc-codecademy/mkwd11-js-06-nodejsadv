@@ -1,19 +1,25 @@
-import { Injectable } from "@nestjs/common";
+import { Injectable, Inject } from "@nestjs/common";
 import { Product } from './interfaces/product'
+import { Model } from "mongoose";
 
 @Injectable()
 export class ProductsService {
-    constructor() {}
+    constructor(
+        @Inject('PRODUCT_MODEL') private productModel: Model<Product>
+    ) {}
 
-    getProducts(): any {
-        console.log('in service')
-        return [{
-            title: "Orange",
-            price: 10
-        }]
+    getProducts(): Promise<Product[]> {
+        // return [{
+        //     title: "Orange",
+        //     price: 10
+        // }]
+
+        return this.productModel.find()
     }
 
-    createProduct(product: Product) {
-        return product;
+    createProduct(product: Product): Promise<Product> {
+        // return product;
+
+        return this.productModel.create(product)
     }
 }
