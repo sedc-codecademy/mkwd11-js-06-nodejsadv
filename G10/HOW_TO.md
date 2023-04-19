@@ -29,3 +29,10 @@
 5. Add username and password - DO NOT USE the following characters `: / ? # [ ] @`
 6. Click add user
 7. Celebrate!
+
+## Create a NestJS Project
+1. Install NestJS CLI by running `npm i -g @nestjs/cli`
+2. Create a new project by running `nest new <project-name>`
+3. Change directory into the project by running `cd <project-name>`
+4. Run `npm run start:dev` to start the project in development mode
+5. Celebrate!
