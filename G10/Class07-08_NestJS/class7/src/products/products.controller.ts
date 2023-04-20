@@ -28,17 +28,21 @@ import { ProductQueryDto } from './dtos/product-query.dto';
 export class ProductsController {
   constructor(private readonly productsService: ProductsService) {}
 
+  @Get()
+  @UsePipes(ValidationPipe) // this is necessary to use the full potential of the class-validators. It will enable proper error returns
+  // ApiResponse is used to describe the successful response
   @ApiResponse({
     status: 200,
     description: 'The found products',
   })
-  @Get()
+  // @Query() will get the full query object. example ?title=test&sort=asc will result in:
+  // { title: 'test', sort: 'asc' }
   getProducts(@Query() query: ProductQueryDto): Promise<ProductResponseDto[]> {
     return this.productsService.getProducts(query);
   }
 
   @Post()
-  @UsePipes(ValidationPipe)
+  @UsePipes(ValidationPipe) // this is necessary to use the full potential of the class-validators. It will enable proper error returns
   @ApiCreatedResponse({
     status: 201,
     description: 'The created product',
@@ -49,6 +53,8 @@ export class ProductsController {
     return this.productsService.createProduct(product);
   }
 
+  @Put(':id')
+  @UsePipes(ValidationPipe)
   @ApiResponse({
     status: 200,
     description: 'The product has been updated',
@@ -57,8 +63,6 @@ export class ProductsController {
     status: 404,
     description: 'The product has not been found',
   })
-  @Put(':id')
-  @UsePipes(ValidationPipe)
   updateProduct(
     @Param('id') id: string,
     @Body() updateData: ProductUpdateDto,

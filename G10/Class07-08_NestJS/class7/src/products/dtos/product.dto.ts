@@ -11,8 +11,11 @@ import { Product, ProductStatus } from './../interfaces/product';
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 
 export class ProductCreateDto {
+  // used to validate property
   @IsString()
   @IsNotEmpty()
+
+  // used to document property (in swagger)
   @ApiProperty({
     type: String,
     description: 'The title of the product',
@@ -24,7 +27,7 @@ export class ProductCreateDto {
   @IsNotEmpty()
   @Min(0)
   @ApiProperty({
-    type: Number,
+    type: Number, // 'number' is valid also
     description: 'The price of the product',
     example: 10,
   })
@@ -33,14 +36,14 @@ export class ProductCreateDto {
   @IsOptional()
   @IsString()
   @ApiPropertyOptional({
-    type: String,
+    type: String, // 'string' is valid also
     description: 'The product description',
     example: 'This is a nice orange',
     required: false,
   })
   description?: string;
 
-  @IsString({ each: true })
+  @IsString({ each: true }) // validate each item in the array, making sure if the item is string
   @IsArray()
   @ApiProperty({
     type: [String],
@@ -62,6 +65,9 @@ export class ProductCreateDto {
 }
 
 export class ProductResponseDto extends ProductCreateDto implements Product {
+  // extends will take all properties, validations and documentations from ProductCreateDto
+  // implements will make sure we follow the structure of the Project interface
+
   @IsString()
   @IsNotEmpty()
   @ApiProperty({
