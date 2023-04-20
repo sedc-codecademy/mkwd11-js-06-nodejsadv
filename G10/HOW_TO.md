@@ -36,3 +36,22 @@
 3. Change directory into the project by running `cd <project-name>`
 4. Run `npm run start:dev` to start the project in development mode
 5. Celebrate!
+
+## Use NestJS/cli
+1. Make sure you have finnished everything listed from `Create a NestJS Project` point
+2. Use command: `nest generate module <module name>` to generate a module
+3. Use command: `nest generate controller <controller name> --no-spec` to generate a controller without spec file
+4. Use command: `nest generate service <service name> --no-spec` to generate a service without spec file
+5. Celebrate!
+
+## Use class-validator
+- run `npm i --save class-validator class-transformer`
+More info in docs available on: https://docs.nestjs.com/techniques/validation
+
+## Use swagger
+- run `npm install --save @nestjs/swagger`
+More info in docs availbale on: https://docs.nestjs.com/openapi/introduction
+
+## Use Logger
+- run `npm i nestjs-pino pino-http`
+More info in docs availbale on: https://www.npmjs.com/package/nestjs-pino
