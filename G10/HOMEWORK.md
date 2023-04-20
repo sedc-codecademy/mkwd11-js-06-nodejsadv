@@ -81,13 +81,13 @@ Add the following validations:
 Each property type has to be set as previously mentioned in task 1 & 2 (ex. name: string, age: number, etc.)
 
 1. Zookeeper
-- name - is required, can't be less than 5 carachters
+- name - is required, can't be less than 5 characters
 - age - is required, has to be between 18 - 110 years, including these two numbers
 - location - is required
 - isActive - is not required, has default value of false
 
 2. Animal
-- name - is required, can't be less than 2 carachters
+- name - is required, can't be less than 2 characters
 - age - is required, negative numbers are not allowed
 - location - is required
 - gender - is required, has to be either 'M' or 'F'
@@ -103,13 +103,13 @@ Each property type has to be set as previously mentioned in task 1 & 2 (ex. name
 Expand zookeeper and animal models with the following properties:
 
 1. Zookeeper:
-- animals - list of animals for which the zooker is responsible for
+- animals - list of animals for which the zookeeper is responsible for
 
 2. Animal
 - zookeeper - responsible zookeeper assigned to this animal
 
 Add three additional endpoints (od edit previous one if possible, up to you):
-- Get zookeper by ID - Should provide all data about the zookeeper, plus list of animals with full data about the animals to which the zookeeper is assigned to
+- Get zookeeper by ID - Should provide all data about the zookeeper, plus list of animals with full data about the animals to which the zookeeper is assigned to
 - Get animal by ID - Should provide all data about the animal, plus info about the responsible zookeeper
 - Assign animals to zookeeper - I should be able to assign multiple animals to a single zookeeper
 
@@ -117,19 +117,28 @@ Add three additional endpoints (od edit previous one if possible, up to you):
 
 Implement all previously listed requirements with Nest JS. The app should use mongoose (so we are rebuilding the version two of the app, mentioned in tasks 3 and 4).
 
-#### Bonus requirements
-1. expand the get all animals endpoint with ability to:
+### Task 6
+
+1. Add proper documentation (Swagger) for the API. The documentation should be available on the `/swagger` endpoint. In addition to this:
+2. Add proper validation to all endpoints. If the request is not valid, the API should return a proper error message and status code.
+
+Bonus: Add proper error handling for all endpoints. If an error occurs, the API should return a proper error message and status code.
+
+### Bonus requirements
+1. Expand the get all animals endpoint with ability to:
 - get all animals from certain location
 - get all fe/male animals
 - get all animals older than X
 
-2. expand the get all zookeepers endpoint with ability to:
+2. Expand the get all zookeepers endpoint with ability to:
 - get all zookeepers from certain location
 - get all zookeepers older than X
 - get all in/active zookeepers
   
 ## Requirment description:
 - Use Mongo DB
+  - Use mongoose (starting from Task 3)
+  - Use Nest JS (starting from Task 5)
 - Anyone can add/edit animals and zookeepers (no need for distinction between admins vs general users)
 - Each property can be edited for both animals and zookeepers
 - Use proper routing for animals and zookeepers
@@ -151,7 +160,8 @@ MONGO_SERVER=
 ## Homeworks versions
 1. Version 1 - Task 1 & Task 2
 2. Version 2 - Task 3 & Task 4
-3. Version 3 - Task 5
+3. Version 3 - Task 5 & Task 6
+4. Version 4 - Task 7 & Task 8
 
 ## Before you send:
 - Use .env variables. Ignore your own values, but provide .env.example so that we can connect to our own database while checking the homework
