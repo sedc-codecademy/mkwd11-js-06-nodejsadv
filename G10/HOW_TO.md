@@ -46,12 +46,12 @@
 
 ## Use class-validator
 - run `npm i --save class-validator class-transformer`
-More info in docs available on: https://docs.nestjs.com/techniques/validation
+- More info in docs available on: https://docs.nestjs.com/techniques/validation
 
 ## Use swagger
 - run `npm install --save @nestjs/swagger`
-More info in docs availbale on: https://docs.nestjs.com/openapi/introduction
+- More info in docs availbale on: https://docs.nestjs.com/openapi/introduction
 
 ## Use Logger
 - run `npm i nestjs-pino pino-http`
-More info in docs availbale on: https://www.npmjs.com/package/nestjs-pino
+- More info in docs availbale on: https://www.npmjs.com/package/nestjs-pino
