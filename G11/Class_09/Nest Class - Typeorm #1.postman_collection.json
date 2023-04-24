@@ -1,0 +1,164 @@
+{
+	"info": {
+		"_postman_id": "12f12cda-cfce-40fc-a31d-2aaba689ddcc",
+		"name": "Nest Class - Typeorm #1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "DEFAULT TASKS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/tasks",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TASKS NAMES",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/tasks/names",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tasks",
+						"names"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get BY ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/tasks/31697726-d7b6-43dd-b393-b03f1e7efc5f",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tasks",
+						"31697726-d7b6-43dd-b393-b03f1e7efc5f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "QUERY PARAMS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/tasks/query?completed=false",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tasks",
+						"query"
+					],
+					"query": [
+						{
+							"key": "completed",
+							"value": "false"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE TASK",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/tasks/b4f5c13b-e8a6-4845-a1f4-5ea4e7351529",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tasks",
+						"b4f5c13b-e8a6-4845-a1f4-5ea4e7351529"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE TASK",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Init google maps api\",\r\n    \"description\": \"Implement google maps on our app\",\r\n    \"dueDate\": \"2023-04-30\",\r\n    \"priority\": \"HIGH\",\r\n    \"status\": \"PENDING\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/tasks",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE TASK",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/tasks/61862600-aabd-4486-a07e-4e2059ebe104",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tasks",
+						"61862600-aabd-4486-a07e-4e2059ebe104"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
