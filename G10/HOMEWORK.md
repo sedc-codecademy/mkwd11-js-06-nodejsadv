@@ -141,9 +141,10 @@ Bonus: Add proper error handling for all endpoints. If an error occurs, the API 
 - get all in/active zookeepers
   
 ## Requirment description:
-- Use Mongo DB
+- Use Mongo DB (Until Task 6)
   - Use mongoose (starting from Task 3)
   - Use Nest JS (starting from Task 5)
+- Use Postgres (Starting from Task 7)
 - Anyone can add/edit animals and zookeepers (no need for distinction between admins vs general users)
 - Each property can be edited for both animals and zookeepers
 - Use proper routing for animals and zookeepers
