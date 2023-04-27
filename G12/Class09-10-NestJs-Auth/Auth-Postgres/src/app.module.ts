@@ -10,7 +10,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 @Module({
   imports: [
     // Makes this module and it's services available to all modules in the application, always import this first to avoid problems with missing variables ordata
-    ConfigModule.forRoot({ isGlobal: true }),
+    ConfigModule.forRoot({ isGlobal: true, envFilePath: '.env' }),
     TypeOrmModule.forRootAsync({
       useFactory: (configService: ConfigService) => {
         return {

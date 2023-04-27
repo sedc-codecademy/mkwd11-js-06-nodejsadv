@@ -7,11 +7,15 @@ import { CreateUserDto } from 'src/users/dtos/create-user.dto';
 import { UsersService } from 'src/users/users.service';
 import * as bcrypt from 'bcrypt';
 import { CredentialsDto } from './dtos/credentials.dto';
-import { ConfigService } from '@nestjs/config';
+import { JwtService } from '@nestjs/jwt';
 
 @Injectable()
 export class AuthService {
-  constructor(private usersService: UsersService) {}
+  constructor(
+    private usersService: UsersService,
+    // Inject the jwtService to be able to use the methods inside for working with tokens
+    private jwtService: JwtService,
+  ) {}
 
   //   1. Register user
   async registerUser(userData: CreateUserDto) {
@@ -45,6 +49,11 @@ export class AuthService {
     if (!isPasswordValid)
       throw new UnauthorizedException('Invalid Credentials');
 
-    return user;
+    const { password, ...userWithoutPassword } = user;
+
+    // Create the token using the signAsync method from the service , secret is not required as it is loaded from the module register
+    const token = await this.jwtService.signAsync(userWithoutPassword);
+
+    return token;
   }
 }
