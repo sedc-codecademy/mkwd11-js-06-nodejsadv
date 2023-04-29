@@ -1,0 +1,298 @@
+{
+	"info": {
+		"_postman_id": "21ddc88a-ffb1-429e-9c87-9b3ede61f131",
+		"name": "Tasks Exercise",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create new task",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Explore jquery\",\r\n    \"description\": \"Use jquery\",\r\n    \"creator\": \"John Doe\",\r\n    \"status\": \"PENDING\",\r\n    \"priority\": \"HIGH\",\r\n    \"dueDate\": \"2023-04-30\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/tasks",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all tasks",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG5fZG9lIiwic3ViIjoxLCJpYXQiOjE2ODI3NjM4NjgsImV4cCI6MTY4Mjc2MzkyOH0.zL3zoYAGRl6GkPqLSkUV143nqdIQSlgvkBpHqYmWLhE",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/tasks",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get is done with query params",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/tasks",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get task by id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG5fZG9lIiwic3ViIjoxLCJpYXQiOjE2ODI3NjMzODQsImV4cCI6MTY4Mjc2MzQ0NH0.UvTog3aTfYP4gC-h8aXVkmKa7v8mB4z5VQGaV2CO9TM",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/tasks/26a7a404-bcf4-487c-9f80-5ce69550ca99",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tasks",
+						"26a7a404-bcf4-487c-9f80-5ce69550ca99"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit task",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Explore Nest JS\",\r\n    \"description\": \"Nest js is awesome, and widely used framework\",\r\n    \"creator\": \"John Doe\",\r\n    \"status\": \"PENDING\",\r\n    \"priority\": \"HIGH\",\r\n    \"dueDate\": \"2023-04-30\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/tasks/26a7a404-bcf4-487c-9f80-5ce69550ca99",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tasks",
+						"26a7a404-bcf4-487c-9f80-5ce69550ca99"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Finish Todo",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"0d3381c0-1755-4a22-a791-5fce710c8074\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/tasks",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Task",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"0c525eb1-3d93-4566-8fdb-510110d0555a\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/tasks/f2335200-9d80-454c-b428-5ede5aeded80",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tasks",
+						"f2335200-9d80-454c-b428-5ede5aeded80"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL COMMENTS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/comments",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET COMMENT BY ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/comments/10ce0865-99fd-46e2-8c1c-e732f7c849f3",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"comments",
+						"10ce0865-99fd-46e2-8c1c-e732f7c849f3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE COMMENT",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"content\": \"Search for free trial google account.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/comments/26a7a404-bcf4-487c-9f80-5ce69550ca99",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"comments",
+						"26a7a404-bcf4-487c-9f80-5ce69550ca99"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE COMMENT",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/comments/94cb2406-114b-453a-86c7-f4812cb05fe9",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"comments",
+						"94cb2406-114b-453a-86c7-f4812cb05fe9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LOGIN",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"john_doe\",\r\n    \"password\": \"john123\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
