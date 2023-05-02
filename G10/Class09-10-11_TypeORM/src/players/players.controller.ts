@@ -4,11 +4,13 @@ import {
   Post,
   UsePipes,
   ValidationPipe,
-} from '@nestjs/common';
-import { PlayersService } from './players.service';
-import { PlayerCreateDto, PlayerResponseDto } from './dtos/player.dto';
+} from "@nestjs/common";
+import { PlayersService } from "./players.service";
+import { PlayerCreateDto, PlayerResponseDto } from "./dtos/player.dto";
+import { ApiTags } from "@nestjs/swagger";
 
-@Controller('players')
+@ApiTags("Players")
+@Controller("players")
 export class PlayersController {
   constructor(private readonly playerService: PlayersService) {}
 
