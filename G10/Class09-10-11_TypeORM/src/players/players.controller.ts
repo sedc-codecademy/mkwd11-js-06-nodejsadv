@@ -8,6 +8,7 @@ import {
   ValidationPipe,
   Param,
   Delete,
+  ParseIntPipe,
 } from "@nestjs/common";
 import { PlayersService } from "./players.service";
 import {
@@ -27,6 +28,11 @@ export class PlayersController {
     return this.playerService.getPlayers();
   }
 
+  @Get(":id")
+  getPlayer(@Param("id") id: string): Promise<PlayerResponseDto> {
+    return this.playerService.getPlayerById(id);
+  }
+
   @Post()
   @UsePipes(ValidationPipe)
   createPlayer(@Body() body: PlayerCreateDto): Promise<PlayerResponseDto> {
@@ -37,6 +43,14 @@ export class PlayersController {
   @UsePipes(ValidationPipe)
   addPlayerToTeam(@Param() params: PlayerAddToTeamDto) {
     return this.playerService.addPlayerToTeam(params.playerId, params.teamId);
+  }
+
+  @Patch(":id/number/:number") // /players/:id/number/:number
+  updatePlayerShirtNumber(
+    @Param("id") id: string,
+    @Param("number", ParseIntPipe) number: number
+  ): Promise<PlayerResponseDto> {
+    return this.playerService.updatePlayerShirtNumber(id, number);
   }
 
   @Delete(":id")

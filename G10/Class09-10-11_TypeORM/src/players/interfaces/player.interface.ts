@@ -3,5 +3,6 @@ export interface Player {
   name: string;
   age: number;
   position: string;
+  number: number;
   teamId?: string;
 }

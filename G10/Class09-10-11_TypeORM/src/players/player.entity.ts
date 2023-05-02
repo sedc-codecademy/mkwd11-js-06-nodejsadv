@@ -7,9 +7,11 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
   DeleteDateColumn,
+  Unique,
 } from "typeorm";
 
 @Entity()
+// @Unique(['number'])
 export class Player {
   @PrimaryGeneratedColumn("uuid")
   id: string;
@@ -22,6 +24,9 @@ export class Player {
 
   @Column()
   position: string;
+
+  @Column({ type: "int", unique: true })
+  number: number;
 
   @Column({
     nullable: true,
