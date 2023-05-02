@@ -63,3 +63,21 @@ export class PlayerResponseDto extends PlayerCreateDto implements Player {
   })
   id: string;
 }
+
+export class PlayerAddToTeamDto {
+  @ApiProperty({
+    type: String,
+    required: true,
+  })
+  @IsUUID()
+  @IsNotEmpty()
+  playerId: string;
+
+  @ApiProperty({
+    type: String,
+    required: true,
+  })
+  @IsUUID()
+  @IsNotEmpty()
+  teamId: string;
+}
