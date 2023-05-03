@@ -7,7 +7,7 @@ Create a team api that will have the following resources: player, team, manager
 For all of these resources you have to add crud operations and the relations between them are as follows
 
 - One team can have only one manager and vice versa
-- One team can have many players and one player can have many teams
+- One team can have many players and one player can have only one team
 
 Models for resources:
 
