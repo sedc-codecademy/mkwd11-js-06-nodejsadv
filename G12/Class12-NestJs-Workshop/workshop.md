@@ -31,8 +31,8 @@ Team
     name: string
     ranking: number
     budget: number
-    manager: Manager (owner)
-    players: Player[] (owner)
+    manager: Manager (owner @JoinColumn here)
+    players: Player[]
 }
 ```
 
@@ -44,7 +44,7 @@ Player
     lastName: string
     salary: number
     ranking: number
-    team: Team
+    team: Team (owner @JoinColumn here)
 }
 
 ```
