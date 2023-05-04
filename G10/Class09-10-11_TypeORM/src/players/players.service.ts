@@ -4,6 +4,7 @@ import {
   Inject,
   Injectable,
   NotFoundException,
+  forwardRef,
 } from "@nestjs/common";
 import { Player } from "./player.entity";
 import {
@@ -11,12 +12,14 @@ import {
   PlayerQueryDto,
   PlayerResponseDto,
 } from "./dtos/player.dto";
+import { TeamsService } from "src/teams/teams.service";
 
 @Injectable()
 export class PlayersService {
   constructor(
     @Inject("PLAYER_REPOSITORY")
-    private playerRepository: Repository<Player>
+    private playerRepository: Repository<Player>,
+    @Inject(forwardRef(() => TeamsService)) private teamService: TeamsService
   ) {}
 
   getPlayers(query: PlayerQueryDto): Promise<PlayerResponseDto[]> {
@@ -80,6 +83,15 @@ export class PlayersService {
     }
 
     return this.getPlayerById(id);
+  }
+
+  async removePlayerFromTeam(id: string): Promise<void> {
+    const player = await this.getPlayerById(id);
+
+    await this.playerRepository.save({
+      id,
+      team: null,
+    });
   }
 
   async deletePlayer(id: string): Promise<void> {

@@ -1,7 +1,9 @@
 import {
   Body,
   Controller,
+  Delete,
   Get,
+  Param,
   Post,
   Query,
   UsePipes,
@@ -26,5 +28,10 @@ export class TeamsController {
   @UsePipes(ValidationPipe)
   createTeam(@Body() body: TeamCreateDto): Promise<TeamResponseDto> {
     return this.teamsService.createTeam(body);
+  }
+
+  @Delete(":id")
+  deleteTeam(@Param("id") id: string): Promise<void> {
+    return this.teamsService.deleteTeam(id);
   }
 }

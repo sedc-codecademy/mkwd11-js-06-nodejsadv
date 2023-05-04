@@ -12,6 +12,7 @@ import { Team } from "../interfaces/team.interface";
 import { ApiProperty, ApiPropertyOptional } from "@nestjs/swagger";
 import { IsNotEmptyArray } from "../../common/validators/is-not-empty-array.validator";
 import { Type } from "class-transformer";
+import { PlayerResponseDto } from "src/players/dtos/player.dto";
 
 export class TeamStadiumDetailsDto {
   @IsString()
@@ -99,6 +100,13 @@ export class TeamResponseDto extends TeamCreateDto implements Team {
     example: "uyitg21u6",
   })
   id: string;
+
+  @ApiProperty({
+    type: [PlayerResponseDto],
+    description: "The players playing for the team",
+    required: true,
+  })
+  players: PlayerResponseDto[];
 }
 
 export class TeamQueryDto {

@@ -1,3 +1,5 @@
+import { Player } from "../../players/interfaces/player.interface";
+
 export interface Team {
   id: string;
   name: string;
@@ -5,7 +7,7 @@ export interface Team {
   league: string;
   jerseyColors: string[];
   stadiumDetails: StadiumDetails;
-  //players: any[]
+  players: Player[];
 }
 
 interface StadiumDetails {
