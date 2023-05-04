@@ -1,7 +1,7 @@
 import { Inject, Injectable } from "@nestjs/common";
-import { TeamCreateDto, TeamResponseDto } from "./dtos/team.dto";
+import { TeamCreateDto, TeamQueryDto, TeamResponseDto } from "./dtos/team.dto";
 import { Team } from "./teams.entity";
-import { Repository } from "typeorm";
+import { Repository, ILike } from "typeorm";
 
 @Injectable()
 export class TeamsService {
@@ -10,9 +10,28 @@ export class TeamsService {
     private teamRepository: Repository<Team>
   ) {}
 
-  getTeams(): Promise<TeamResponseDto[]> {
+  getTeams(query: TeamQueryDto): Promise<TeamResponseDto[]> {
+    let whereQuery = {};
+
+    if (query?.league) {
+      whereQuery = { ...whereQuery, league: query.league };
+    }
+
+    if (query?.location) {
+      whereQuery = { ...whereQuery, location: query.location };
+    }
+
+    if (query?.name) {
+      whereQuery = { ...whereQuery, name: ILike(`%${query.name}%`) };
+    }
+
     return this.teamRepository.find({
+      where: whereQuery,
       relations: ["players"],
+      order: {
+        name: "ASC",
+        league: "ASC",
+      },
     });
   }
 

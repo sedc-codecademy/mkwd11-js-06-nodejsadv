@@ -6,7 +6,11 @@ import {
   NotFoundException,
 } from "@nestjs/common";
 import { Player } from "./player.entity";
-import { PlayerCreateDto, PlayerResponseDto } from "./dtos/player.dto";
+import {
+  PlayerCreateDto,
+  PlayerQueryDto,
+  PlayerResponseDto,
+} from "./dtos/player.dto";
 
 @Injectable()
 export class PlayersService {
@@ -15,8 +19,9 @@ export class PlayersService {
     private playerRepository: Repository<Player>
   ) {}
 
-  getPlayers(): Promise<PlayerResponseDto[]> {
+  getPlayers(query: PlayerQueryDto): Promise<PlayerResponseDto[]> {
     return this.playerRepository.find({
+      where: query,
       // withDeleted: true,
     });
   }

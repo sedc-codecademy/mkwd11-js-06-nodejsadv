@@ -3,12 +3,13 @@ import {
   IsNotEmpty,
   IsNotEmptyObject,
   IsNumber,
+  IsOptional,
   IsString,
   IsUUID,
   ValidateNested,
 } from "class-validator";
 import { Team } from "../interfaces/team.interface";
-import { ApiProperty } from "@nestjs/swagger";
+import { ApiProperty, ApiPropertyOptional } from "@nestjs/swagger";
 import { IsNotEmptyArray } from "../../common/validators/is-not-empty-array.validator";
 import { Type } from "class-transformer";
 
@@ -98,4 +99,36 @@ export class TeamResponseDto extends TeamCreateDto implements Team {
     example: "uyitg21u6",
   })
   id: string;
+}
+
+export class TeamQueryDto {
+  @IsString()
+  @IsOptional()
+  @ApiPropertyOptional({
+    type: String,
+    description: "Search by location",
+    example: "Skopje",
+    required: false,
+  })
+  location?: string;
+
+  @IsString()
+  @IsOptional()
+  @ApiPropertyOptional({
+    type: String,
+    description: "Search by league",
+    example: "PMFL",
+    required: false,
+  })
+  league?: string;
+
+  @IsString()
+  @IsOptional()
+  @ApiPropertyOptional({
+    type: String,
+    description: "Search by name",
+    example: "Vardar",
+    required: false,
+  })
+  name?: string;
 }

@@ -9,12 +9,14 @@ import {
   Param,
   Delete,
   ParseIntPipe,
+  Query,
 } from "@nestjs/common";
 import { PlayersService } from "./players.service";
 import {
   PlayerCreateDto,
   PlayerResponseDto,
   PlayerAddToTeamDto,
+  PlayerQueryDto,
 } from "./dtos/player.dto";
 import { ApiParam, ApiTags } from "@nestjs/swagger";
 
@@ -24,8 +26,9 @@ export class PlayersController {
   constructor(private readonly playerService: PlayersService) {}
 
   @Get()
-  getPlayers(): Promise<PlayerResponseDto[]> {
-    return this.playerService.getPlayers();
+  @UsePipes(ValidationPipe)
+  getPlayers(@Query() query: PlayerQueryDto): Promise<PlayerResponseDto[]> {
+    return this.playerService.getPlayers(query);
   }
 
   @Get(":id")

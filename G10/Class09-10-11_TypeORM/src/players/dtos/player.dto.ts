@@ -9,6 +9,7 @@ import {
 } from "class-validator";
 import { Player } from "../interfaces/player.interface";
 import { ApiProperty, ApiPropertyOptional } from "@nestjs/swagger";
+import { Type } from "class-transformer";
 
 export class PlayerCreateDto {
   @IsString()
@@ -117,4 +118,27 @@ export class PlayerAddToTeamDto {
   @IsUUID()
   @IsNotEmpty()
   teamId: string;
+}
+
+export class PlayerQueryDto {
+  @IsString()
+  @IsOptional()
+  @ApiPropertyOptional({
+    type: String,
+    required: false,
+    description: "Search by the name of the player",
+    example: "Darko Panchev",
+  })
+  name?: string;
+
+  @IsNumber()
+  @IsOptional()
+  @Type(() => Number)
+  @ApiPropertyOptional({
+    type: Number,
+    required: false,
+    description: "Search by the age of the player",
+    example: 22,
+  })
+  age?: number;
 }
