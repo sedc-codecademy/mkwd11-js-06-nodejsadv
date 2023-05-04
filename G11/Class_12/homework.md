@@ -6,31 +6,24 @@
 
 PART 1
 
-- Create OrderEntity that implements the Order inteface
-- The order entity should have the same properties as the interface
-  - id should be primaryColumn
-  - orderDate should be column
-  - productsOrdered should be list of ProductEntities
-- Create the relation between the OrderEntity and ProductEntity, using the productsOrdered property.
-  NOTE: You should create a property in the ProductEntity too, that will be named order, and it will be in relation with the OrderEntity
-  NOTE: Think of what the relation might be, between the ProductEntity and the OrderEntity
+- On the user entity add one more property called role that is of type enum ( the enum should have two roles: ADMIN and COSTUMER)
+- Create user entity using the typeorm. (It will create user table in the database for us)
+- Create one more endpoint to register user. (Should include create user dto. The role should be provided from the request body)
+- Install bcrypt (it is library to hash and compare hashed password; COMMAND TO INSTALL: npm install brypt; npm install --save @types/bcrypt)
+- When registering new user, hash the user password before saving into the db, and when loging in the user, compare the password provided with the one of the db
+- Make sure we can register a user, and login with the creadentials.
 
 PART 2
+- Create costum roles decorator
+- Create role guard
+- The routes for creating, removing and updating a product can only be accessed by a user that has the role ADMIN.
 
-- Create new module and service, users
-- In the users service hardcode few users
-- Create one method findOne that returns user by username (same as in class)
-- Create authentication on the application
-- Create new module,service called auth
-- Create local and jwt strategies
-- Create local and jwt guards
-- Create route for login that returns access_token to the user
-- Orders routes must be guarded, and to access them we should provide access_token in the requst
+
+BONUS: 
+- Add swagger documentation on your nest application 
 
 NOTE: Use the code from class as a guide and inpiration.
 
 NOTE: Use postman to play and test the endpoint. Use the code from class as an inspiration and guide. When the homework is submitted, send the the postman collection too.
 
-PACKAGES USED FOR AUTHENTICATION:
-npm install --save @nestjs/passport passport passport-local @nestjs/jwt passport-jwt
-npm install --save-dev @types/passport-local @types/passport-jwt
+
