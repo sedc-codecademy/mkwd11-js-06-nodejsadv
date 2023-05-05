@@ -1,3 +1,5 @@
+import { Team } from "src/teams/interfaces/team.interface";
+
 export interface Player {
   id: string;
   name: string;
@@ -5,4 +7,5 @@ export interface Player {
   position: string;
   number: number;
   teamId?: string;
+  team: Team;
 }

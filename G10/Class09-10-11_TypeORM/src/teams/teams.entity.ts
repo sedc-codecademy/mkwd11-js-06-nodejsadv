@@ -8,6 +8,7 @@ import {
   UpdateDateColumn,
   DeleteDateColumn,
 } from "typeorm";
+import { TeamStadiumDetailsDto } from "./dtos/team.dto";
 
 @Entity()
 export class Team {
@@ -22,6 +23,12 @@ export class Team {
 
   @Column()
   league: string;
+
+  @Column("simple-array")
+  jerseyColors: string[];
+
+  @Column("simple-json")
+  stadiumDetails: TeamStadiumDetailsDto;
 
   @OneToMany(() => Player, player => player.team)
   players: Player[];
