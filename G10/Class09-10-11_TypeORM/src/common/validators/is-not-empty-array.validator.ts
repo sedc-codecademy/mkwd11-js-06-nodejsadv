@@ -1,5 +1,6 @@
 import { ValidationOptions, registerDecorator } from "class-validator";
 
+// This is a custom validator
 export function IsNotEmptyArray(validationOptions?: ValidationOptions) {
   return (object: unknown, propertyName: string): void => {
     registerDecorator({

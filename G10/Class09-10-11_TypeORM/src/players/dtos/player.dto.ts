@@ -1,3 +1,4 @@
+import { TeamResponseDto } from "./../../teams/dtos/team.dto";
 import {
   IsNotEmpty,
   IsNumber,
@@ -76,6 +77,13 @@ export class PlayerResponseDto extends PlayerCreateDto implements Player {
     example: "uhdagiuge2",
   })
   id: string;
+
+  @ApiProperty({
+    type: TeamResponseDto,
+    required: true,
+    description: "The team that the player plays in",
+  })
+  team: TeamResponseDto;
 
   @ApiProperty({
     type: Date,

@@ -52,15 +52,13 @@ export class TeamsService {
   async deleteTeam(id: string): Promise<void> {
     const team = await this.getTeam(id);
 
-    console.log(team);
-
     const hasPlayers = team?.players?.length > 0;
 
     if (hasPlayers) {
+      // delete ALL players
       for (const player of team.players) {
         await this.playerService.removePlayerFromTeam(player.id);
       }
-      // delete ALL players
     }
     // Delete the team
     await this.teamRepository.delete(id);

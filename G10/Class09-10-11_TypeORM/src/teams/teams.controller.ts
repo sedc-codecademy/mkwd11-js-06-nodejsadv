@@ -19,6 +19,7 @@ export class TeamsController {
   constructor(private readonly teamsService: TeamsService) {}
 
   @Get()
+  @UsePipes(ValidationPipe)
   getTeams(@Query() query: TeamQueryDto): Promise<TeamResponseDto[]> {
     console.log("the query", query);
     return this.teamsService.getTeams(query);

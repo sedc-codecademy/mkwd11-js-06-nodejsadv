@@ -107,6 +107,30 @@ export class TeamResponseDto extends TeamCreateDto implements Team {
     required: true,
   })
   players: PlayerResponseDto[];
+
+  @ApiProperty({
+    type: Date,
+    required: true,
+    description: "Date and time when the team has been created",
+    example: "2023-05-02T18:24:24.713Z",
+  })
+  createdAt!: Date;
+
+  @ApiProperty({
+    type: Date,
+    required: true,
+    description: "Date and time when the team has been updated",
+    example: "2023-05-02T18:24:24.713Z",
+  })
+  updatedAt!: Date;
+
+  @ApiPropertyOptional({
+    type: Date,
+    required: false,
+    description: "Date and time when the team has been deleted",
+    example: "2023-05-02T18:24:24.713Z",
+  })
+  deletedAt?: Date;
 }
 
 export class TeamQueryDto {
