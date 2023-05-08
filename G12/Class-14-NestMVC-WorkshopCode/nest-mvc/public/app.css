@@ -1,0 +1,32 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+}
+
+h1,
+h2 {
+  margin: 0;
+  padding: 20px 40px;
+  border: 2px solid black;
+}
+
+h1 {
+  background-color: aliceblue;
+}
+
+h2 {
+  background-color: lightgoldenrodyellow;
+}
+
+.product-list {
+  list-style: none;
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.product-list li {
+  padding: 10px;
+  border: 1px solid darkblue;
+  margin: 5px 0px;
+}
