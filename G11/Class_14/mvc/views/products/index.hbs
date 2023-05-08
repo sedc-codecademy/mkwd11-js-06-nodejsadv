@@ -1,0 +1,23 @@
+{{#> app}}
+{{#*inline "content"}}
+
+<div>
+    {{#each products}}
+        <div> 
+            {{!-- every name property of the product object --}}
+            <h2>{{name}}</h2>
+        </div>
+    {{/each}}
+</div>
+{{/inline}}
+{{/app}}
+
+
+<p>
+    This is products page, Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus amet tenetur unde tempora dolorem ipsam quis modi impedit, earum quibusdam!
+</p>
+
+
+<button id="myBtn">Click me</button>
+
+<script src="/scripts/products/index.js"></script>
