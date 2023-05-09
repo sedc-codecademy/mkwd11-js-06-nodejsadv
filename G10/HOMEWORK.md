@@ -129,6 +129,12 @@ Bonus: Add proper error handling for all endpoints. If an error occurs, the API 
 1. Remove mongoose from the project.
 2. Add TypeORM to the project. Change the project structure so that you will have both services for business logic and models for TypeORM.
 
+### Task 8
+
+Add authentication to the project. The project should have two types of users:
+- Admin - can do everything
+- User - can only view data (general users should not be able to create, update nor delete zookeepers and animals)
+
 ### Bonus requirements
 1. Expand the get all animals endpoint with ability to:
 - get all animals from certain location
