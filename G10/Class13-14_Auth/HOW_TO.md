@@ -2,7 +2,8 @@
 - npm install --save @nestjs/swagger - To add swagger
 - npm i --save class-validator class-transformer - To enable DTO validations
 - npm install --save @nestjs/typeorm typeorm pg - To inlcude TypeORM & PostgreSQL
-- 
+- npm i bcrypt
+- npm i -D @types/bcrypt
 
 # How Auth works
 
