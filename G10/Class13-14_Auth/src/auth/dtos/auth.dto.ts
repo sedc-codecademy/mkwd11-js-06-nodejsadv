@@ -59,3 +59,16 @@ export class UserResponseDto extends UserRegisterDto {
   })
   deletedAt?: Date;
 }
+
+export class LoginResponseDto {
+  @ApiProperty({
+    type: UserResponseDto,
+  })
+  user: UserResponseDto;
+
+  @ApiProperty({
+    type: String,
+    description: "The access Bearer token",
+  })
+  accessToken: string;
+}
