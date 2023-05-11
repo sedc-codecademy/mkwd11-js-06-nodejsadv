@@ -8,20 +8,20 @@ export class RolesGuard implements CanActivate {
   constructor(private reflector: Reflector, private jwtService: JwtService) {}
 
   canActivate(context: ExecutionContext): boolean | Promise<boolean> {
+    const roles = this.reflector.get<string[]>("roles", context.getHandler());
+
     const request = context.switchToHttp().getRequest();
 
     const authHeaderTokenValue = request.headers?.authorization?.split(" ")[1];
 
-    console.log("authheader", authHeaderTokenValue);
-
     const userInToken = this.jwtService.decode(authHeaderTokenValue);
-
-    console.log("userInToken", userInToken);
 
     if (!userInToken) {
       return false;
     }
 
-    return userInToken["role"] === RolesEnum.admin;
+    request.user = userInToken;
+
+    return roles.includes(userInToken["role"]);
   }
 }
