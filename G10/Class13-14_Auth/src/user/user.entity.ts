@@ -1,3 +1,4 @@
+import { RolesEnum } from "src/auth/roles.enum";
 import {
   BaseEntity,
   Column,
@@ -6,11 +7,11 @@ import {
   Entity,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
-} from 'typeorm';
+} from "typeorm";
 
 @Entity()
 export class User extends BaseEntity {
-  @PrimaryGeneratedColumn('uuid')
+  @PrimaryGeneratedColumn("uuid")
   id: string;
 
   @Column({ unique: true })
@@ -21,6 +22,13 @@ export class User extends BaseEntity {
 
   @Column()
   name: string;
+
+  @Column({
+    type: "enum",
+    enum: RolesEnum,
+    default: RolesEnum.user,
+  })
+  role: RolesEnum;
 
   @CreateDateColumn()
   createdAt!: Date;
