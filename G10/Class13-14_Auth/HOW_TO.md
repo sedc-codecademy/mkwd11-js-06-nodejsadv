@@ -20,4 +20,3 @@
 
 # What is Authorization
 
-- 

@@ -1,6 +1,5 @@
-import { ExtractJwt } from "passport-jwt";
+import { ExtractJwt, Strategy } from "passport-jwt";
 import { PassportStrategy } from "@nestjs/passport";
-import { Strategy } from "passport-local";
 import { JWT_SECRET } from "./auth.const";
 
 export class JwtStrategy extends PassportStrategy(Strategy) {
@@ -13,6 +12,7 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
   }
 
   async validate(payload: any) {
-    return { userId: payload.sub, username: payload.username };
+    console.log(payload);
+    return true;
   }
 }
