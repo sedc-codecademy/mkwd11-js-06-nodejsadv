@@ -2,7 +2,9 @@
     <h1>Students List</h1>
     <ul>
         {{#each students as |student| }}
-        <li>{{student.name}} - {{student.age}}</li>
+        {{!-- option 1: using "/student/:id" - start the URL after localhost:3000 --}}
+        {{!-- option 2. using just ":id" - only add ID  --}}
+        <li><a href="/student/{{student.id}}">{{student.name}} - {{student.age}}</a></li>
         {{/each}}
     </ul>
 </div>

@@ -1,0 +1,10 @@
+<div>
+    <div>Name: {{#if isMale}} Mr. {{else}} Ms. {{/if}} {{ name }}</div>
+    <div>Age: {{ age }}</div>
+    <div>Track: {{ track }}</div>
+
+    <div>
+        <a href="/student/update-student/{{id}}">Update</a>
+        <a href="/student/delete-student/{{id}}">Delete</a>
+    </div>
+</div>

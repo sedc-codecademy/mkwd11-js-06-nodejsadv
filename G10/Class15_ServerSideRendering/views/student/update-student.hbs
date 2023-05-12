@@ -1,0 +1,23 @@
+<div>
+    <form action="/student/update-student/{{id}}" method="POST">
+        <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" value="{{name}}" />
+        </div>
+
+        <div>
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" value="{{age}}" />
+        </div>
+
+        <div>
+            <label for="track">Track</label>
+            <select name="track" id="track" value="{{track}}">
+                <option value="NET">.NET</option>
+                <option value="JS">Node JS</option>
+            </select>
+        </div>
+
+        <button type="submit">Update Student</button>
+    </form>
+</div>
