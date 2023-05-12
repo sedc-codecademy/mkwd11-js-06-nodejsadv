@@ -2,6 +2,7 @@ import { ExtractJwt, Strategy } from "passport-jwt";
 import { PassportStrategy } from "@nestjs/passport";
 import { JWT_SECRET } from "./auth.const";
 
+// JWT Strategy needed so that passport can validate the JWT token
 export class JwtStrategy extends PassportStrategy(Strategy) {
   constructor() {
     super({

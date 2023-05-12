@@ -12,7 +12,7 @@ async function bootstrap() {
     .setTitle("Auth example")
     .setDescription("The auth API description")
     .setVersion("1.0")
-    .addBearerAuth()
+    .addBearerAuth() // Enabling the Bearer auth on Swagger
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup("swagger", app, document);

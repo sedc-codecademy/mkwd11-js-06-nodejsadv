@@ -18,7 +18,7 @@ export class AuthService {
   ) {}
 
   async register(body: UserRegisterDto): Promise<UserResponseDto> {
-    const hashedPassword = await bcrypt.hash(body.password, SALT_ROUNDS);
+    const hashedPassword = await bcrypt.hash(body.password, SALT_ROUNDS); // hash the password before saving it to the database
 
     const userResponse = await this.userService.createUser({
       ...body,
@@ -34,6 +34,7 @@ export class AuthService {
       credentials.password
     );
 
+    // user data is saved in the token
     const accessToken = this.jwtService.sign({
       role: user.role,
       id: user.id,
@@ -53,7 +54,7 @@ export class AuthService {
   ): Promise<UserResponseDto> {
     const user = await this.userService.getUserByUsername(username);
 
-    const isPasswordValid = await bcrypt.compare(password, user.password);
+    const isPasswordValid = await bcrypt.compare(password, user.password); // compare the hashed password with the password from the request
 
     if (!isPasswordValid) {
       throw new UnauthorizedException(`Invalid credentials`);

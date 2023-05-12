@@ -18,11 +18,11 @@ export class StudentController {
   async getStudents() {
     const students = this.studentService.getStudents();
 
-    return { students };
+    return { students }; // What we return here will be available in the template
   }
 
-  @Get("add-student")
-  @Render("student/add-student")
+  @Get("add-student") // This is the path for the form (which we use in the browser)
+  @Render("student/add-student") // this is the template name (path to the template (view))
   getAddStudentForm() {
     return {};
   }
@@ -45,7 +45,7 @@ export class StudentController {
 
   // to add the student
   @Post()
-  @Redirect("/student")
+  @Redirect("/student") // After the student is added to the list of students, redirect to the student list. This is the path for the form (which we use in the browser)
   createStudent(@Body() body: any) {
     return this.studentService.createStudent(body);
   }
